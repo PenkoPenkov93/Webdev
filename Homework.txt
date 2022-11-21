@@ -1,0 +1,76 @@
+
+####CI/CD Explained###
+
+CI - Stands for continious integration
+CD - Stands for continius delivery
+
+CI Explanation :
+Continious integration is about to implementig changes of the code as fast as possible, and check if they are compatiable with the existing code.
+Continuous integration is a DevOps software development practice where developers regularly merge their code changes into a central repository,
+after which automated builds and tests are run. 
+Continuous integration most often refers to the build or integration stage of the software release process and entails both an automation component (e.g. a CI or build service) and a cultural component (e.g. learning to integrate frequently). 
+The key goals of continuous integration are to find and address bugs quicker, improve software quality, and reduce the time it takes to validate and release new software updates.
+
+In the past, developers on a team might work in isolation for an extended period of time and only merge their changes to the master branch once their work was completed. 
+This made merging code changes difficult and time-consuming, and also resulted in bugs accumulating for a long time without correction. These factors made it harder to deliver updates to customers quickly.
+
+With continuous integration, developers frequently commit to a shared repository using a version control system such as Git. 
+Prior to each commit, developers may choose to run local unit tests on their code as an extra verification layer before integrating. 
+A continuous integration service automatically builds and runs unit tests on the new code changes to immediately surface any errors.
+
+
+CD Explanation : 
+Continuous delivery is a software development practice where code changes are automatically prepared for a release to production. 
+A pillar of modern application development, continuous delivery expands upon continuous integration by deploying all code changes to a testing environment and/or a production environment after the build stage. 
+When properly implemented, developers will always have a deployment-ready build artifact that has passed through a standardized test process. 
+
+Continuous delivery lets developers automate testing beyond just unit tests so they can verify application updates across multiple dimensions before deploying to customers. 
+These tests may include UI testing, load testing, integration testing, API reliability testing, etc. 
+This helps developers more thoroughly validate updates and pre-emptively discover issues. 
+With the cloud, it is easy and cost-effective to automate the creation and replication of multiple environments for testing, which was previously difficult to do on-premises.
+
+### Continuous Delivery vs. Continuous Deployment ###
+With continuous delivery, every code change is built, tested, and then pushed to a non-production testing or staging environment. 
+There can be multiple, parallel test stages before a production deployment. 
+The difference between continuous delivery and continuous deployment is the presence of a manual approval to update to production. 
+With continuous deployment, production happens automatically without explicit approval. 
+
+### DevOps Pipeline Stages ###
+
+1. Continuous integration/continuous delivery/deployment (CI/CD)
+Continuous integration is the practice of making frequent commits to a common source code repository. 
+It’s continuously integrating code changes into existing code base so that any conflicts between different developer’s code changes are quickly identified and relatively easy to remediate. 
+This practice is critically important to increasing deployment efficiency. 
+
+We believe that trunk-based development is a requirement of continuous integration. If you are not making frequent commits to a common branch in a shared source code repository, you are not doing continuous integration. 
+If your build and test processes are automated but your developers are working on isolated, long-living feature branches that are infrequently integrated into a shared branch, you are also not doing continuous integration. 
+
+Continuous delivery ensures that the “main” or “trunk” branch of an application's source code is always in a releasable state. 
+In other words, if management came to your desk at 4:30 PM on a Friday and said, “We need the latest version released right now,” that version could be deployed with the push of a button and without fear of failure.
+
+This means having a pre-production environment that is as close to identical to the production environment as possible and ensuring that automated tests are executed, so that every variable that might cause a failure is identified before code is merged into the main or trunk branch.   
+
+Continuous deployment entails having a level of continuous testing and operations that is so robust, new versions of software are validated and deployed into a production environment without requiring any human intervention.
+
+This is rare and in most cases unnecessary. It is typically only the unicorn businesses who have hundreds or thousands of developers and have many releases each day that require, or even want to have, this level of automation. 
+
+To simplify the difference between continuous delivery and continuous deployment, think of delivery as the FedEx person handing you a box, and deployment as you opening that box and using what’s inside. If a change to the product is required between the time you receive the box and when you open it, the manufacturer is in trouble!
+
+2. Continuous feedback
+The single biggest pain point of the old waterfall method of software development — and consequently why agile methodologies were designed — was the lack of timely feedback. When new features took months or years to go from idea to implementation, it was almost guaranteed that the end result would be something other than what the customer expected or wanted. 
+Agile succeeded in ensuring that developers received faster feedback from stakeholders. Now with DevOps, developers receive continuous feedback not not only from stakeholders, but from systematic testing and monitoring of their code in the pipeline.  
+
+Continuous testing is a critical component of every DevOps pipeline and one of the primary enablers of continuous feedback. 
+In a DevOps process, changes move continuously from development to testing to deployment, which leads not only to faster releases, but a higher quality product. This means having automated tests throughout your pipeline, including unit tests that run on every build change, smoke tests, functional tests, and end-to-end tests.  
+
+Continuous monitoring is another important component of continuous feedback. 
+A DevOps approach entails using continuous monitoring in the staging, testing, and even development environments. 
+It is sometimes useful to monitor pre-production environments for anomalous behavior, but in general this is an approach used to continuously assess the health and performance of applications in production. 
+
+Numerous tools and services exist to provide this functionality, and this may involve anything from monitoring your on-premise or cloud infrastructure such as server resources, networking, etc. or the performance of your application or its API interfaces.
+
+3. Continuous operations
+Continuous operations is a relatively new and less common term, and definitions vary. One way to interpret it is as “continuous uptime”. For example in the case of a blue/green deployment strategy in which you have two separate production environments, one that is “blue” (publicly accessible) and one that is “green” (not publicly accessible). 
+In this situation, new code would be deployed to the green environment, and when it was confirmed to be functional then a switch would be flipped (usually on a load-balancer) and traffic would switch from the “blue” system to the “green” system. The result is no downtime for the end-users. 
+
+Another way to think of Continuous operations is as continuous alerting. This is the notion that engineering staff is on-call and notified if any performance anomalies in the application or infrastructure occur. In most cases, continuous alerting goes hand in hand with continuous monitoring.
