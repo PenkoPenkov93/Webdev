@@ -1,8 +1,10 @@
 pipeline{
-	agent any
+agent any
 		
 	
-  
+parameters{
+	string(name:'Version', defaultvalue:'abc',description:'Initila version')	
+	}
   stages{
     stage("Build"){
       steps{
@@ -32,6 +34,6 @@ pipeline{
     failure{
       echo "send email for failure"
     }
-    
+  } 
   }
- 
+}
