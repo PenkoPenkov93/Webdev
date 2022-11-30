@@ -3,7 +3,7 @@ agent any
 		
 	
 parameters{
-	string(name:'Version', defaultvalue:'abc',description:'Initila version')	
+	string(name:'Version', defaultValue:'abc',description:'Initila version')	
 	}
   stages{
     stage("Build"){
@@ -35,5 +35,5 @@ parameters{
       echo "send email for failure"
     }
   } 
-  }
+  
 }
