@@ -1,5 +1,7 @@
 pipeline{
-  agent any 
+	agent {
+		label="any"
+	}
   
   stages{
     stage("Build"){
@@ -10,11 +12,7 @@ pipeline{
     
       }}
     stage ("Test"){
-      when{
-        expression{
-              env.NODE_NAME == "Build-In-Node"
-          
-        }
+      
       }
       steps{
        echo "World"
