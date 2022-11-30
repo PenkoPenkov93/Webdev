@@ -13,5 +13,9 @@ pipeline{
       steps{
        echo "World"
       }  }
+    stage ("Publish"){
+      steps{
+       echo "From the git"
+      }  }
  }
 } 
